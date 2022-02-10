@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-Vue.config.productionTip = false
+import { BootstrapVue } from 'bootstrap-vue'
 
+import './app.scss'
+import i18n from './i18n'
+
+Vue.use(BootstrapVue)
 new Vue({
-  render: h => h(App),
+  i18n,
+  render: h => h(App)
 }).$mount('#app')

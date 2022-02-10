@@ -1,0 +1,12 @@
+{
+  "common": {
+    "logout": "Log out"
+  },
+  "components": {
+    "header": {
+      "language": "language",
+      "currency": "currency",
+      "myAccount": "My Account"
+    }
+  }
+}
