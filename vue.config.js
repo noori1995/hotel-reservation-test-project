@@ -8,5 +8,8 @@ module.exports = {
       includeLocales: false,
       enableBridge: true
     }
+  },
+  devServer: {
+    proxy: 'https://hiring.zumata.xyz',
   }
 }

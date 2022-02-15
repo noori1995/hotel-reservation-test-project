@@ -1,0 +1,167 @@
+//Define variable
+$lg-font-size: 24px;
+$default-font-size: 16px;
+$md-size-font: 15px;
+$sm-size-font: 14px;
+$xs-size-font: 12px;
+$xxs-size-font: 10px;
+$default-border-radius: 10px;
+$half-border-radius: 5px;
+$quarter-border-radius: 3px;
+$body-min-width: 320px;
+$frame-xs: 420px;
+$frame-sm: 550px;
+$frame-md: 810px;
+$frame-lg: 1250px;
+$frame-xlg: 1450px;
+$frame-padding: 40px;
+$frame-padding-sm: 20px;
+$desktop-breakpoint: 1400px;
+$mini-desktop-breakpoint: 1280px;
+$laptop-breakpoint: 1024px;
+$tablet-breakpoint: 767px;
+$mobile-breakpoint: 540px;
+$mobile-sm-breakpoint: 420px;
+$mobile-xs-breakpoint: 360px;
+$transition-sm: 0.2s ease-in-out;
+$transition-md: 0.3s ease-in-out;
+$transition-lg: 0.4s ease-in-out;
+$transition-xlg: 0.5s ease-in-out;
+
+
+// Define variable defaults
+$black: #000 !default;
+$dark-blue: #002D63 !default;
+$light-blue: #00A1E5 !default;
+$white: #FFF !default;
+$grey-100: #333 !default;
+$grey-400: #757575 !default;
+$light-grey:#E5E5E5 !default;
+
+
+$body-bg: $light-grey;
+$body-color: $grey-100;
+$primary: $dark-blue;
+$secondary: $light-blue;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    'black': $black,
+    'dark-blue': $dark-blue,
+    'light-blue': $light-blue,
+    'white': $white,
+    'grey-100': $grey-100,
+    'grey-400': $grey-400
+  ),
+  $theme-colors
+);
+
+
+
+// Global css
+body{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+
+h2{
+  font-size: $lg-font-size !important;
+  font-weight: 700 !important;
+}
+
+h3{
+  font-size: $default-font-size !important;
+  font-weight: 700 !important;
+}
+
+h4{
+font-size: $sm-size-font !important;
+font-weight: 700 !important;
+}
+
+
+// Define global class
+.custom-header-link{
+    color: $black
+}
+.cursor-pointer {
+  cursor: pointer !important ;
+}
+.md-input{
+    width: 250px
+}
+.lg-input{
+    width: 470px
+}
+
+.rotate-180{
+  transform: rotate(180deg)
+}
+
+  .default-font-size{
+    font-size: $default-font-size;
+  }
+  .md-font-size{
+    font-size: $md-size-font;
+  }
+  .sm-font-size{
+    font-size: $sm-size-font;
+  }
+  .xs-font-size{
+    font-size: $xs-size-font;
+  }
+  .xxs-font-size{
+    font-size: $xxs-size-font;
+  }
+  .default-border-radius {
+    border-radius: $default-border-radius;
+  }
+  .half-border-radius{
+    border-radius: $half-border-radius;
+  }
+  .quarter-border-radius{
+    border-radius: $quarter-border-radius;
+  }
+
+
+
+  .frame {
+    max-width: $frame-xlg;
+    padding-left: $frame-padding;
+    padding-right: $frame-padding;
+    margin-left: auto;
+    margin-right: auto;
+
+    &.frame-xs {
+      max-width: $frame-xs;
+    }
+    &.frame-sm {
+      max-width: $frame-sm;
+    }
+    &.frame-md {
+      max-width: $frame-md;
+    }
+    &.frame-lg {
+      max-width: $frame-lg;
+    }
+    @media (max-width: $laptop-breakpoint) {
+      padding-left: $frame-padding-sm;
+      padding-right: $frame-padding-sm;
+    }
+  }
+
+// Then import Bootstrap an BootstrapVue SCSS files (order is important)
+@import "~/node_modules/placeholder-loading/src/scss/placeholder-loading";
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+// Import components scss
+@import '../scss/base-button.scss';
+@import '../scss/base-input.scss';
+@import '../scss/hotel-filters.scss';
+@import '../scss/hotel-results.scss';
+@import '../scss/hotel-card.scss';

@@ -1,0 +1,29 @@
+.base-input {
+    input{
+        border-radius: 3px;
+        &.have-icon{
+            padding-left: 35px;
+        }
+    }
+    input,
+    input::-webkit-input-placeholder {
+    font-size: 14px;
+    color: $grey-100;
+    }
+    .icon{
+        position: absolute;
+        margin: 17px 10px;
+    }
+    .size-sm{
+        width: 250px;
+        height: 50px;
+    }
+    .size-md{
+        width: 350px;
+        height: 50px;
+    }
+    .size-lg{
+        width: 470px;
+        height: 50px;
+    }
+}

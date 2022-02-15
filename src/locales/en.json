@@ -1,12 +1,149 @@
 {
   "common": {
-    "logout": "Log out"
+    "logout": "Log out",
+    "clear": "CLEAR",
+    "error": "ERROR!",
+    "oops": "Opps, something went wrong.",
+    "of": "of"
   },
   "components": {
     "header": {
       "language": "language",
       "currency": "currency",
       "myAccount": "My Account"
+    },
+    "baseScroll": {
+      "backToTop": "Back to top"
+    },
+    "basePagination": {
+      "showingResults": "Showing Results"
+    },
+    "searchBar": {
+      "search": "Search"
+    },
+    "filterItem": {
+      "show": "Show",
+      "more": "more",
+      "showLess": "Show less",
+      "search": {
+        "placeholder": "e.g. Hilton, Ibis ..."
+      }
+    },
+    "footer": {
+      "copyright": "Copyright CloudTravel 2022.",
+      "item1":"FAQ",
+      "item2":"Terms of use",
+      "item3":"Privacy policy",
+      "item4":"Contact us"
+    },
+    "hotelResults": {
+      "propertiesFound": "properties found",
+      "city": "city",
+      "tab1": "Popularity",
+      "tab2": "Price",
+      "tab3": "Reviews",
+      "tab4": "Discount",
+      "sorry": "Sorry! We couldn't find any properties for your search."
+    },
+    "hotelCard": {
+      "nightlyAvg": "Nightly avg",
+      "save": "SAVE",
+      "today": "TODAY",
+      "foodTags":{
+        "item1": "Room Only",
+        "item2": "Breakfast",
+        "item3": "Lunch",
+        "item4": "Dinner",
+        "item5": "Half board: Could be any 2 meals (e.g. breakfast and lunch, lunch and dinner).",
+        "item6": "Full board: Breakfast, lunch, and dinner",
+        "item7": "All inclusive"
+      }
+    },
+    "hotelFilters": {
+      "showOnMap": "Show on map",
+      "pricePerNight":{
+        "title":"Price per night"
+      },
+      "reviews": {
+        "title": "Reviews",
+        "option1": "Excellent",
+        "option2": "Very Good",
+        "option3": "Good",
+        "option4": "Fair",
+        "option5": "Poor",
+        "option6": "No review"
+      },
+      "starRating": {
+        "title": "Star rating",
+        "option6": "No rating"
+      },
+      "hotelName": {
+        "title": "Hotel name"
+      },
+      "reservationPolicy": {
+        "title": "Reservation policy",
+        "option1": "Free cancellation",
+        "option2": "Book now, pay later",
+        "option3": "Pay at hotel"
+      },
+      "mealPlan": {
+        "title": "Meal plan",
+        "option1": "Room only",
+        "option2": "Breakfast",
+        "option3": "Lunch",
+        "option4": "Dinner",
+        "option5": "Half board",
+        "option6": "Full board",
+        "option7": "All inclusive"
+      },
+      "propertyType": {
+        "title": "Property type",
+        "option1": "Hotel",
+        "option2": "Hostel/Backpacker accomodation",
+        "option3": "Apartment",
+        "option4": "Aparthotel",
+        "option5": "Resort",
+        "option6": "Inn",
+        "option7": "Motel",
+        "option8": "Bed & breakfast",
+        "option9": "Guesthouse",
+        "option10": "Condo",
+        "option11": "All-inclusive property",
+        "option12": "Hostal"
+      },
+      "facilities": {
+        "title": "Facilities",
+        "option1": "Swimming pool",
+        "option2": "Internet access",
+        "option3": "Non-smoking floor",
+        "option4": "4",
+        "option5": "5",
+        "option6": "6",
+        "option7": "7",
+        "option8": "8",
+        "option9": "9",
+        "option10": "10",
+        "option11": "11",
+        "option12": "12",
+        "option13": "13",
+        "option14": "14",
+        "option15": "15",
+        "option16": "16",
+        "option17": "17",
+        "option18": "18",
+        "option19": "19",
+        "option20": "20",
+        "option21": "21",
+        "option22": "22",
+        "option23": "23",
+        "option24": "24",
+        "option25": "25",
+        "option26": "26",
+        "option27": "27",
+        "option28": "28",
+        "option29": "29"
+      }
+
     }
   }
 }

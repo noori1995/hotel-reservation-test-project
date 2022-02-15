@@ -1,0 +1,19 @@
+.hotel-filters{
+    min-width: 290px;
+    .show-map{
+        img{
+            height: 100px;
+            width: 290px;
+        }
+        .button-container{
+            position: absolute;
+            height: 100px;
+            width: 290px;
+
+            button{
+                height: 40px;
+                margin-top: calc((100px - 40px) / 2) !important;
+            }
+        }
+    }
+}

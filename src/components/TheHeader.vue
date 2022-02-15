@@ -1,13 +1,16 @@
 <template>
-  <div class="header">
-    <b-navbar class="my-3 mx-5 d-flex flex-row justify-content-between" >
-        <img src="@/assets/logo.png" width="227px" alt="cloud travel logo" />
+  <div class="header bg-white w-100 p-0 m-0">
+    <div class="frame frame-lg">
+      <b-navbar class=" px-0 d-flex flex-row justify-content-between" >
+        <b-navbar-brand href="#">
+          <img src="@/assets/logo.png" width="227px" alt="cloud travel logo" />
+        </b-navbar-brand>
         <div class="d-flex flex-row">
           <template v-for="(item, index) in menu">
               <b-nav-item-dropdown :key="index" no-caret toggle-class="custom-header-link">
                 <template #button-content>
                   <div>
-                    <span class="px-2">{{ item.title }}</span>
+                    <span class="px-1">{{ item.childs.find(el => el.selected).title }}</span>
                     <img src="@/assets/icons/drop-down.svg">
                   </div>
                 </template>
@@ -19,6 +22,7 @@
           <AuthBox />
         </div>
     </b-navbar>
+    </div>
   </div>
 </template>
 
@@ -37,16 +41,16 @@ export default {
           title: this.$t('components.header.language'),
           id: 0,
           childs: [
-            { title: 'English' , href: '#'},
-            { title: 'Spanish', href: '#' }
+            { title: 'English' , href: '#', selected: true},
+            { title: 'Spanish', href: '#', selected: false}
           ]
         },
         {
           title: this.$t('components.header.currency'),
-          id: 3,
+          id: 1,
           childs: [
-            { title: 'USD', href: '#' },
-            { title: 'SGD', href: '#' }
+            { title: 'USD', href: '#', selected: true },
+            { title: 'SGD', href: '#', selected: false }
           ]
         }
       ]

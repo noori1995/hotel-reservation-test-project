@@ -1,0 +1,17 @@
+.base-button {
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    &.size-sm{
+        width: 150px;
+        height: 50px;
+    }
+    &.size-md{
+        width: 170px;
+        height: 50px;
+    }
+    &.size-lg{
+        width: 200px;
+        height: 60px;
+    }
+}
