@@ -9,12 +9,20 @@
         -webkit-box-orient: vertical;
     }
     .images-container{
-        min-width: 200px;
-        max-width: 200px;
+        min-width: 100px;
+        max-width: 100px;
         overflow: hidden;
-       .hero-image{
-           width: 200px;
-       }
+        @media only screen and (min-width: $laptop-breakpoint)  {
+            max-width: 200px;
+            min-width: 200px;
+        }
+        img{
+            height: 100%;
+            object-fit: cover;
+            @media only screen and (min-width: $laptop-breakpoint)  {
+                height: none;
+            }
+        }
     }
     .price-details{
         min-width: 160px;

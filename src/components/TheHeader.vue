@@ -5,13 +5,14 @@
         <b-navbar-brand href="#">
           <img src="@/assets/logo.png" width="227px" alt="cloud travel logo" />
         </b-navbar-brand>
-        <div class="d-flex flex-row">
+        <!-- desktop only -->
+        <div class="flex-row d-none d-lg-flex">
           <template v-for="(item, index) in menu">
               <b-nav-item-dropdown :key="index" no-caret toggle-class="custom-header-link">
                 <template #button-content>
                   <div>
                     <span class="px-1">{{ item.childs.find(el => el.selected).title }}</span>
-                    <img src="@/assets/icons/drop-down.svg">
+                    <img src="@/static/icons/drop-down.svg">
                   </div>
                 </template>
                 <b-dropdown-item v-for="(child) in item.childs" :key="child.title" href="#">
@@ -21,6 +22,12 @@
           </template>
           <AuthBox />
         </div>
+        <!-- desktop only -->
+        <!-- mobile only -->
+        <div class="d-flex d-lg-none">
+          <img src="@/static/icons/humberger.svg" />
+        </div>
+        <!-- mobile only -->
     </b-navbar>
     </div>
   </div>

@@ -2,7 +2,7 @@
     <div class="base-input d-flex flex-row">
         <template>
             <b-icon v-if="icon" :icon="icon" class="icon"/>
-            <b-form-input @change="$emit('change', $event)" :list="`datalist-${id}`" :type="type" :placeholder="placeholder" :class="[`size-${size}`, icon ? 'have-icon':'no-icon']" />
+            <b-form-input @change="$emit('change', $event)" :list="`datalist-${id}`" :name="name" :type="type" :placeholder="placeholder" :class="[`size-${size}`, icon ? 'have-icon':'no-icon']" />
             <datalist v-if="datalist" :id="`datalist-${id}`">
                 <option v-for="data in datalist" :key="data.code">{{ data.label }}</option>
             </datalist>
@@ -20,6 +20,10 @@ export default {
         id: {
             type: String,
             required: true
+        },
+        name: {
+            type: String,
+            required: false
         },
         datalist: {
             type: Array,

@@ -15,15 +15,23 @@
         margin: 17px 10px;
     }
     .size-sm{
-        width: 250px;
+
         height: 50px;
+        @media only screen and (min-width: $laptop-breakpoint)  {
+            width: 250px;
+        }
+
     }
     .size-md{
-        width: 350px;
         height: 50px;
+        @media only screen and (min-width: $laptop-breakpoint)  {
+            width: 350px;
+        }
     }
     .size-lg{
-        width: 470px;
         height: 50px;
+        @media only screen and (min-width: $laptop-breakpoint)  {
+            width: 470px;
+        }
     }
 }

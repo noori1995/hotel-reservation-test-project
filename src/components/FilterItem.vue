@@ -8,7 +8,7 @@
                 <div v-for="item in data.slice(0, numberOfVisibleItems)" :key="item.value" class="d-flex flex-row justify-content-between">
                     <b-form-checkbox button-variant="primary">
                         <template v-if="item.icon ==='star'">
-                            <BaseStar :src="'@/assets/icons/star.svg'" :count="item.number" />
+                            <BaseStar :src="'@/static/icons/star.svg'" :count="item.number" />
                         </template>
                         <template v-else-if="item.text">
                             <span class="text-grey-100 xs-font-size">{{ item.text }}</span>
@@ -21,13 +21,13 @@
                         <span class="text-dark-blue pr-1 xs-font-size" v-b-toggle="`filter-${id}`">
                             {{ $t('components.filterItem.show') }} {{ data.length - numberOfVisibleItems }} {{ $t('components.filterItem.more') }}
                         </span>
-                        <img src="@/assets/icons/drop-down-dark-blue.svg">
+                        <img src="@/static/icons/drop-down-dark-blue.svg">
                     </template>
                     <b-collapse :id="`filter-${id}`" @show="iscollapseOpen = true" @hide="iscollapseOpen = false">
                         <div v-for="item in data.slice(numberOfVisibleItems)" :key="item.value" class="d-flex flex-row justify-content-between">
                             <b-form-checkbox button-variant="primary">
                                 <template v-if="item.icon ==='star'">
-                                    <img src="@/assets/icons/star.svg" v-for="i in item.number" :key="i.number" />
+                                    <img src="@/static/icons/star.svg" v-for="i in item.number" :key="i.number" />
                                 </template>
                                 <template v-else-if="item.text">
                                     <span class="text-grey-100 xs-font-size">{{ item.text }}</span>
@@ -40,7 +40,7 @@
                         <span class="text-dark-blue pr-1 xs-font-size" v-b-toggle="`filter-${id}`">
                             {{ $t('components.filterItem.showLess') }}
                         </span>
-                        <img class="rotate-180" src="@/assets/icons/drop-down-dark-blue.svg">
+                        <img class="rotate-180" src="@/static/icons/drop-down-dark-blue.svg">
                     </template>
                 </template>
             </div>
@@ -51,7 +51,7 @@
                     <h4>{{ title }}</h4>
                     <span v-show="clearButton" class="font-weight-bold xs-font-size cursor-pointer">{{ $t('common.clear') }}</span>
                 </div>
-                  <base-input id="1" type="search" icon="Search" size="md" :placeholder="this.$t('components.filterItem.search.placeholder')" />
+                  <base-input id="2" type="search" name="search" icon="Search" size="md" :placeholder="this.$t('components.filterItem.search.placeholder')" />
             </div>
         </template>
         <template v-else-if="type === 'range'">
@@ -70,6 +70,11 @@
                     :process-style="{ backgroundColor: '#00A1E5', height:'7px', border: '1px #00A1E5 solid' }"
                     :lazy="true"
                 />
+                <div class="d-flex flex-row mt-3 justify-content-between xs-font-size text-center">
+                    <div class="box-size-1 border border-grey-700 py-1">SGD {{ range[0] }}</div>
+                    <span class="divs-spacer border-bottom border-grey-400"></span>
+                    <div class="box-size-1 border border-grey-700 py-1">SGD {{ range[1] }}</div>
+                </div>
             </div>
         </template>
     </div>

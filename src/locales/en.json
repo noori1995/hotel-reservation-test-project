@@ -29,6 +29,12 @@
         "placeholder": "e.g. Hilton, Ibis ..."
       }
     },
+    "filtersAndMapView": {
+      "sort&Filter": "Sort & Filter",
+      "mapView": "Map View",
+      "sortBy": "Sort by",
+      "filterBy": "Filter by"
+    },
     "footer": {
       "copyright": "Copyright CloudTravel 2022.",
       "item1":"FAQ",

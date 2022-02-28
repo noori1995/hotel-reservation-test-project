@@ -1,32 +1,32 @@
 <template>
     <div class="hotel-card d-flex flex-row w-100">
         <div class="images-container d-flex flex-column justify-content-between">
-            <b-img width="200px" height="200px" class="hero-image" :src="hotel.property.heroImage.url" :alt="hotel.property.heroImage.caption"/>
-                <div v-if="hotel.property.gallery && hotel.property.gallery.length > 0" class="d-flex flex-row justify-content-between mt-1">
-                    <span v-for="(images,i) of hotel.property.gallery" v-show="i < 4" :key="i">
+            <b-img :width="isMobile ? '100px':'200px' " :height="isMobile ? '100%':'200px' " class="hero-image" :src="hotel.property.heroImage.url" :alt="hotel.property.heroImage.caption"/>
+            <div v-if="hotel.property.gallery && hotel.property.gallery.length > 0 && !isMobile" class="d-flex flex-row justify-content-between mt-1">
+                <span v-for="(images,i) of hotel.property.gallery" v-show="i < 4" :key="i">
                     <b-img-lazy width="48px" height="48px" :src="imageSelector(images)" alt="" />
                 </span>
             </div>
         </div>
-        <div class="details-container d-flex flex-row justify-content-between w-100">
+        <div class="details-container d-flex justify-content-between w-100" :class="isMobile ? 'flex-column':'flex-row'">
             <div class="informations d-flex flex-column ml-3 my-3 mr-1">
-                <span class="d-flex flex-row">
-                    <h3 v-if="hotel.property.name" class="mr-2 mt-1">{{ hotel.property.name }}</h3>
-                    <BaseStar v-if="hotel.property.starRating" :count="hotel.property.starRating" />
+                <span class="d-flex " :class="isMobile ? 'flex-column mb-1':'flex-row'">
+                    <h3 v-if="hotel.property.name" class="mr-2 mt-1" :class="isMobile ? 'sm-font-size mb-0':''">{{ hotel.property.name }}</h3>
+                    <BaseStar v-if="hotel.property.starRating" :count="hotel.property.starRating" class="one-line" />
                 </span>
                 <p v-if="hotel.property.location" class="xs-font-size text-grey-100 my-1">{{ hotel.property.location.address }}, {{ hotel.property.location.city }}, {{ hotel.property.location.country }}, {{ hotel.property.location.postalCode }}</p>
                 <p v-if="hotel.property.reviews" class="xs-font-size text-grey-400 my-1">{{ hotel.property.reviews.summary.text }}</p>
                 <span>
                     <BaseTag v-for="(text, i) of tagsList" :key="i" v-show="i <= hotel.packages[0].foodCode" :text="text" />
                 </span>
-                <!-- TODO: I dont find any data with covidSafety field! -->
+                <!-- TODO: I dont find covidSafety field! -->
                 <span v-if="hotel.property.reviews && hotel.property.reviews.covidSafety">
-                    <img src="@/assets/icons/location.svg" alt="">
+                    <img src="@/static/icons/location.svg" alt="">
                     <span class="xs-font-size text-grey-100 ml-2">{{ hotel.property.reviews.covidSafety }}</span>
                 </span>
             </div>
-            <div class="price-details d-flex flex-column justify-content-between  text-right">
-                <img width="146px" src="@/assets/images/TY-score-widget.png" alt="">
+            <div class="price-details d-flex flex-column justify-content-between text-right">
+                <img v-if="!isMobile" width="146px" src="@/static/images/TY-score-widget.png" alt="">
                 <div class="d-flex flex-column xs-font-size">
                     <span v-if="hasDiscount">
                         <span class="bg-light-blue p-1 text-white font-weight-bold">
@@ -63,6 +63,11 @@ export default {
         index: {
             type: Number,
             required: true
+        },
+        isMobile: {
+            type: Boolean,
+            required: false,
+            default: false
         }
     },
     data() {

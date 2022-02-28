@@ -2,7 +2,7 @@
     <div class="footer d-flex flex-column text-center">
         <div class="bg-grey-100 text-white sm-font-size">
             <div class="my-4">
-                <span v-for="item in menu" :key="item.id" class="mx-3">
+                <span v-for="item in menu" :key="item.id" class="mx-2 mx-lg-3">
                     {{ item.title }}
                 </span>
             </div>
